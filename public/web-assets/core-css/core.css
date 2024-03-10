@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --default-system-font: 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    background: rgb(20, 20, 20);
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+nav {
+    padding: 20px;
+    font-size: 15px;
+    background: rgba(35, 35, 35, 0.537);
+    border-bottom: 1.5px solid rgb(45, 45, 45);
+    z-index: 2;
+}
+
+div.nav-mobile-fs {
+    display: none;
+    background: rgb(21, 21, 21);
+    padding: 20px;
+    position: fixed;
+    top: 8%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 3;
+}
+
+div.nav-mobile-fs a {
+    display: flex;
+    padding-left: 5px;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+div.nav-mobile-fs i {
+    margin-right: 5px;
+}
+
+nav a.nav-icon {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+nav a.nav-menu {
+    float: left;
+    display: none;
+}
+
+nav a.nav-links {
+    float: right;
+    margin-left: 15px;
+}
+
+
+.webapp-player {
+    padding: 50px;
+    z-index: 5;
+    background-attachment: none;
+    border-bottom: 1px solid rgb(45, 45, 45);
+}
+
+.webapp-player-main {
+    z-index: 6;
+    position: relative; /* Ensures child elements are positioned relative to this container */
+}
+
+.player-image {
+    height: 160px;
+    margin-right: 30px;
+}
+
+.webapp-player-main::before {
+    content: ""; /* Creates a pseudo-element to act as the blurred background */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Inherits the background image from the parent */
+    filter: blur(50px); /* Applies the blur effect */
+    z-index: -1; /* Positions the pseudo-element behind the content */
+}
+
+/* easy-css variables */
+.d-block {display: block;}
+.d-flex {display: flex;}
+.d-none {display: none;}
+.d-inline {display: inline;}
+.d-iblock {display: inline-block;}
+.d-iflex {display: inline-flex;}
+.fd-column {flex-direction: column;}
+.fd-row {flex-direction: row;}
+.p-absolute {position: absolute;}
+.p-fixed {position: fixed;}
+.p-static {position: static;}
+.p-sticky {position: sticky;}
+.p-relative {position: relative;}
+.f-left {float: left;}
+.f-right {float: right;}
+
+.btn-spacing {padding-left: 5px; padding-right: 5px;}
+
+/* Styles */
+
+/* Global */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+button {
+    padding: 5px;
+    background: none;
+    border: none;
+    font-family: inherit;
+}
+
+button[core-css='btn-standard'] {
+    background: rgb(15, 15, 15);
+    color: white;
+    padding: 15px;
+}
+
+button[core-css='btnify'] {
+    background: linear-gradient(rgb(13, 23, 16) 0%, rgb(18, 102, 46) 100%);
+    color: white;
+    padding: 15px;
+}
+
+.slider-root {
+    width: 100%;
+}
+
+.app-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    background-color: rgb(56, 56, 56);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    -webkit-transition: opacity .2;
+}
+
+.app-slider:hover {
+    opacity: 1;
+}
+
+.app-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(72, 135, 187);
+    cursor: pointer;
+}
+
+.app-slider::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(72, 135, 187);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 650px) {
+    nav a.nav-links {
+        display: none;
+    }
+    
+    nav a.nav-menu {
+        display: block;
+    }
+
+    .static-text {
+        font-size: 1em;
+        margin-top: -30px;
+        margin-bottom: -10px;
+    }
+}
+
+@keyframes fsFadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;} 
+}
+
+@keyframes fsFadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;} 
+}
